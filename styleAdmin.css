@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: #0e0b08;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* LEFT PANEL */
+.poetry-panel {
+    flex: 1;
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url("../images/gurindam-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #f6e6c8;
+    padding: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.poetry-panel h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    margin: 0;
+    text-shadow: 0 0 25px rgba(255,215,150,0.6);
+}
+
+.tagline {
+    font-style: italic;
+    margin-bottom: 50px;
+    color: #e2c99a;
+}
+
+.poem span {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    animation: fadeText 6s infinite;
+}
+
+/* Floating ornaments */
+.ornament {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 2px solid rgba(255,215,150,0.3);
+    border-radius: 50%;
+    bottom: 60px;
+    right: 100px;
+    animation: float 8s ease-in-out infinite;
+}
+
+.ornament.small {
+    width: 90px;
+    height: 90px;
+    bottom: 200px;
+    right: 240px;
+    animation-duration: 5s;
+}
+
+/* RIGHT PANEL */
+.login-panel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, #2b1d12, #0e0b08);
+}
+
+.login-card {
+    width: 380px;
+    padding: 45px;
+    background: rgba(255, 248, 230, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+    animation: slideIn 1.2s ease;
+}
+
+.login-card h2 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    color: #4b2e1e;
+    margin-bottom: 30px;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    border: 1px solid #cbb292;
+    font-size: 14px;
+}
+
+.login-card input:focus {
+    outline: none;
+    border-color: #8b5a2b;
+    box-shadow: 0 0 10px rgba(139,90,43,0.4);
+}
+
+.login-card button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #8b5a2b, #b07c3e);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-card button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(139,90,43,0.5);
+}
+
+.error {
+    background: #fbeaea;
+    color: #a30000;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #6b4f32;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-25px); }
+}
+
+@keyframes fadeText {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+.welcome-subtitle {
+    font-size: 12px;
+    color: #8a7a66;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    text-align: center; /* 👈 this line */
+    opacity: 0.85;
+}
