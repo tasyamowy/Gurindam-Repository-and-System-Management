@@ -2,7 +2,7 @@
 // ==============================
 // SESSION CHECK (OPTIONAL BUT RECOMMENDED)
 // ==============================
-// require_once 'session_check.php';
+//require_once 'session_check.php';
 
 // ==============================
 // DATABASE CONNECTION
@@ -30,6 +30,7 @@ $totalUsers = $conn->query("SELECT COUNT(*) AS c FROM users")->fetch_assoc()['c'
 // ==============================
 // First, try to get the currently logged-in admin from session
 session_start();
+require_once 'connection.php';
 $adminName = "Administrator"; // default
 
 if (isset($_SESSION['user_id'])) {
